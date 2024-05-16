@@ -14,10 +14,8 @@ struct MainView: View {
             
             StarView()
                 .tabItem {
-                    VStack {
                         Image(systemName: "star.fill")
                         Text("Favorites")
-                    }
                 }
             
             ClockView()
