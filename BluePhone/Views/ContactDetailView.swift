@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct ContactDetailView: View {
+    var contact: ContactModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Hello, \(contact.firstname ?? "Missing")")
     }
 }
 
 #Preview {
-    ContactDetailView()
+    ContactDetailView(contact: ContactModel(firstname: "Mary", lastname: "Can"))
 }

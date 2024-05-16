@@ -7,12 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A47E70862BBDD77E005802B0 /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E70852BBDD77E005802B0 /* ContactsViewModel.swift */; };
+		A47E70882BBE1E2C005802B0 /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E70872BBE1E2C005802B0 /* ContactModel.swift */; };
+		A47E708A2BDAC0EE005802B0 /* ContactDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E70892BDAC0EE005802B0 /* ContactDetailView.swift */; };
+		A47E708C2BDAE4FC005802B0 /* ContactListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E708B2BDAE4FC005802B0 /* ContactListRowView.swift */; };
 		A4A81C192B156AB700948951 /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A81C182B156AB700948951 /* StarView.swift */; };
-		A4A81C1B2B156ACE00948951 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A81C1A2B156ACE00948951 /* ClockView.swift */; };
-		A4A81C1D2B156ADF00948951 /* PersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A81C1C2B156ADF00948951 /* PersonView.swift */; };
+		A4A81C1B2B156ACE00948951 /* MakeCallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A81C1A2B156ACE00948951 /* MakeCallView.swift */; };
+		A4A81C1D2B156ADF00948951 /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A81C1C2B156ADF00948951 /* ContactsView.swift */; };
 		A4A81C1F2B156AF200948951 /* KeypadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A81C1E2B156AF200948951 /* KeypadView.swift */; };
 		A4A81C212B156B0700948951 /* VoicemailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A81C202B156B0700948951 /* VoicemailView.swift */; };
-		A4A81C252B15BB0C00948951 /* CallOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A81C242B15BB0C00948951 /* CallOption.swift */; };
+		A4A81C252B15BB0C00948951 /* CallOptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A81C242B15BB0C00948951 /* CallOptionModel.swift */; };
+		A4A81C292B168AF800948951 /* OptionListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A81C282B168AF800948951 /* OptionListRowView.swift */; };
+		A4A81C2B2B16927900948951 /* NumberButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A81C2A2B16927900948951 /* NumberButton.swift */; };
+		A4A81C2D2B16CA2E00948951 /* PhoneGridRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A81C2C2B16CA2E00948951 /* PhoneGridRow.swift */; };
+		A4BFCE9D2B9A376C00D77A04 /* CallOptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BFCE9C2B9A376C00D77A04 /* CallOptionViewModel.swift */; };
+		A4BFCE9F2B9A80F000D77A04 /* CallingSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BFCE9E2B9A80F000D77A04 /* CallingSessionView.swift */; };
+		A4BFCEA32B9A8A3500D77A04 /* SessionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BFCEA22B9A8A3500D77A04 /* SessionButtonView.swift */; };
 		A4FCB1A52ABE1D4900F6CA86 /* BluePhoneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FCB1A42ABE1D4900F6CA86 /* BluePhoneApp.swift */; };
 		A4FCB1A72ABE1D4900F6CA86 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FCB1A62ABE1D4900F6CA86 /* MainView.swift */; };
 		A4FCB1A92ABE1D4B00F6CA86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4FCB1A82ABE1D4B00F6CA86 /* Assets.xcassets */; };
@@ -20,12 +30,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A47E70852BBDD77E005802B0 /* ContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
+		A47E70872BBE1E2C005802B0 /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
+		A47E70892BDAC0EE005802B0 /* ContactDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailView.swift; sourceTree = "<group>"; };
+		A47E708B2BDAE4FC005802B0 /* ContactListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListRowView.swift; sourceTree = "<group>"; };
 		A4A81C182B156AB700948951 /* StarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
-		A4A81C1A2B156ACE00948951 /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
-		A4A81C1C2B156ADF00948951 /* PersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonView.swift; sourceTree = "<group>"; };
+		A4A81C1A2B156ACE00948951 /* MakeCallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeCallView.swift; sourceTree = "<group>"; };
+		A4A81C1C2B156ADF00948951 /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
 		A4A81C1E2B156AF200948951 /* KeypadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeypadView.swift; sourceTree = "<group>"; };
 		A4A81C202B156B0700948951 /* VoicemailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicemailView.swift; sourceTree = "<group>"; };
-		A4A81C242B15BB0C00948951 /* CallOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallOption.swift; sourceTree = "<group>"; };
+		A4A81C242B15BB0C00948951 /* CallOptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallOptionModel.swift; sourceTree = "<group>"; };
+		A4A81C282B168AF800948951 /* OptionListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionListRowView.swift; sourceTree = "<group>"; };
+		A4A81C2A2B16927900948951 /* NumberButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberButton.swift; sourceTree = "<group>"; };
+		A4A81C2C2B16CA2E00948951 /* PhoneGridRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneGridRow.swift; sourceTree = "<group>"; };
+		A4BFCE9C2B9A376C00D77A04 /* CallOptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallOptionViewModel.swift; sourceTree = "<group>"; };
+		A4BFCE9E2B9A80F000D77A04 /* CallingSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallingSessionView.swift; sourceTree = "<group>"; };
+		A4BFCEA22B9A8A3500D77A04 /* SessionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionButtonView.swift; sourceTree = "<group>"; };
 		A4FCB1A12ABE1D4900F6CA86 /* BluePhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BluePhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4FCB1A42ABE1D4900F6CA86 /* BluePhoneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluePhoneApp.swift; sourceTree = "<group>"; };
 		A4FCB1A62ABE1D4900F6CA86 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -44,6 +64,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A4BFCE992B9A0AD100D77A04 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A4A81C242B15BB0C00948951 /* CallOptionModel.swift */,
+				A47E70872BBE1E2C005802B0 /* ContactModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A4BFCE9A2B9A0ADE00D77A04 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A4BFCE9C2B9A376C00D77A04 /* CallOptionViewModel.swift */,
+				A47E70852BBDD77E005802B0 /* ContactsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A4BFCE9B2B9A0AE800D77A04 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A4FCB1A62ABE1D4900F6CA86 /* MainView.swift */,
+				A4A81C182B156AB700948951 /* StarView.swift */,
+				A4A81C1A2B156ACE00948951 /* MakeCallView.swift */,
+				A4A81C1C2B156ADF00948951 /* ContactsView.swift */,
+				A4A81C1E2B156AF200948951 /* KeypadView.swift */,
+				A4A81C202B156B0700948951 /* VoicemailView.swift */,
+				A4A81C282B168AF800948951 /* OptionListRowView.swift */,
+				A4A81C2A2B16927900948951 /* NumberButton.swift */,
+				A4A81C2C2B16CA2E00948951 /* PhoneGridRow.swift */,
+				A4BFCE9E2B9A80F000D77A04 /* CallingSessionView.swift */,
+				A4BFCEA22B9A8A3500D77A04 /* SessionButtonView.swift */,
+				A47E70892BDAC0EE005802B0 /* ContactDetailView.swift */,
+				A47E708B2BDAE4FC005802B0 /* ContactListRowView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		A4FCB1982ABE1D4900F6CA86 = {
 			isa = PBXGroup;
 			children = (
@@ -63,16 +121,12 @@
 		A4FCB1A32ABE1D4900F6CA86 /* BluePhone */ = {
 			isa = PBXGroup;
 			children = (
+				A4BFCE9B2B9A0AE800D77A04 /* Views */,
+				A4BFCE9A2B9A0ADE00D77A04 /* ViewModels */,
+				A4BFCE992B9A0AD100D77A04 /* Models */,
 				A4FCB1A42ABE1D4900F6CA86 /* BluePhoneApp.swift */,
-				A4FCB1A62ABE1D4900F6CA86 /* MainView.swift */,
 				A4FCB1A82ABE1D4B00F6CA86 /* Assets.xcassets */,
 				A4FCB1AA2ABE1D4B00F6CA86 /* Preview Content */,
-				A4A81C182B156AB700948951 /* StarView.swift */,
-				A4A81C1A2B156ACE00948951 /* ClockView.swift */,
-				A4A81C1C2B156ADF00948951 /* PersonView.swift */,
-				A4A81C1E2B156AF200948951 /* KeypadView.swift */,
-				A4A81C202B156B0700948951 /* VoicemailView.swift */,
-				A4A81C242B15BB0C00948951 /* CallOption.swift */,
 			);
 			path = BluePhone;
 			sourceTree = "<group>";
@@ -155,12 +209,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4A81C252B15BB0C00948951 /* CallOption.swift in Sources */,
-				A4A81C1D2B156ADF00948951 /* PersonView.swift in Sources */,
+				A4A81C2D2B16CA2E00948951 /* PhoneGridRow.swift in Sources */,
+				A47E70862BBDD77E005802B0 /* ContactsViewModel.swift in Sources */,
+				A4BFCE9F2B9A80F000D77A04 /* CallingSessionView.swift in Sources */,
+				A4BFCEA32B9A8A3500D77A04 /* SessionButtonView.swift in Sources */,
+				A47E708C2BDAE4FC005802B0 /* ContactListRowView.swift in Sources */,
+				A4A81C252B15BB0C00948951 /* CallOptionModel.swift in Sources */,
+				A4A81C1D2B156ADF00948951 /* ContactsView.swift in Sources */,
 				A4A81C192B156AB700948951 /* StarView.swift in Sources */,
 				A4A81C1F2B156AF200948951 /* KeypadView.swift in Sources */,
-				A4A81C1B2B156ACE00948951 /* ClockView.swift in Sources */,
+				A47E708A2BDAC0EE005802B0 /* ContactDetailView.swift in Sources */,
+				A4A81C1B2B156ACE00948951 /* MakeCallView.swift in Sources */,
 				A4A81C212B156B0700948951 /* VoicemailView.swift in Sources */,
+				A47E70882BBE1E2C005802B0 /* ContactModel.swift in Sources */,
+				A4A81C2B2B16927900948951 /* NumberButton.swift in Sources */,
+				A4A81C292B168AF800948951 /* OptionListRowView.swift in Sources */,
+				A4BFCE9D2B9A376C00D77A04 /* CallOptionViewModel.swift in Sources */,
 				A4FCB1A72ABE1D4900F6CA86 /* MainView.swift in Sources */,
 				A4FCB1A52ABE1D4900F6CA86 /* BluePhoneApp.swift in Sources */,
 			);
@@ -219,7 +283,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -273,7 +337,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -291,8 +355,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BluePhone/Preview Content\"";
+				DEVELOPMENT_TEAM = 38J4Q6NR27;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSContactsUsageDescription = "Sync your contacts to call them.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -319,8 +385,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BluePhone/Preview Content\"";
+				DEVELOPMENT_TEAM = 38J4Q6NR27;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSContactsUsageDescription = "Sync your contacts to call them.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

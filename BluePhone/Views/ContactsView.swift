@@ -10,14 +10,37 @@ import ContactsUI
 
 struct ContactsView: View {
     var wordList : [String] = ["hi", "hello"]
-    @State var contactsViewModel: ContactsViewModel = ContactsViewModel()
+    @EnvironmentObject var contactsViewModel: ContactsViewModel
+    @State private var path = NavigationPath()
     var body: some View
     {
-        List(wordList, id: \.self) { word in
-                Text(word)
-        }
-        .onAppear{
-            contactsViewModel.getLocalContacts()
+        NavigationStack(path: $path){
+            List{
+                ForEach(contactsViewModel.localContacts) { contact in
+                    Button(action: {
+                        path.append(contact)
+                    }, label: {
+                        ContactListRowView(contact: contact)
+                            .contentShape(Rectangle())
+                    })
+                    .buttonStyle(PlainButtonStyle())
+//                    NavigationLink{
+//                        ContactDetailView(contact: contact)
+//                    } label: {
+//                        Text(contact.firstname ?? "Hi")
+//                            .bold()
+//                    }
+                    
+                }
+            }
+            .navigationTitle("Contacts")
+            .listStyle(.plain)
+            .navigationDestination(for: ContactModel.self) { contact in
+                ContactDetailView(contact: contact)
+            }
+//            .onAppear{
+//                contactsViewModel.getLocalContacts()
+//            }
         }
         
 //        NavigationStack {
@@ -42,6 +65,10 @@ struct ContactsView: View {
 
 struct PersonView_Previews: PreviewProvider {
     static var previews: some View {
-        ContactsView()
+        
+        NavigationStack {
+            ContactsView()
+        }
+        .environmentObject(ContactsViewModel())
     }
 }

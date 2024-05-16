@@ -8,11 +8,32 @@
 import SwiftUI
 
 struct SessionButtonView: View {
+    var caption : String
+    var symbol : String
+    var buttonColor: UIColor
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+//        Button {
+//            
+//        } label: {
+            VStack {
+                ZStack {
+                    Circle()
+                        .fill(Color(buttonColor))
+                        .frame(width: 80, height: 80)
+                    Image(systemName: symbol)
+                        .font(.title)
+                        .foregroundColor(.white)
+                }
+                Text(caption)
+                    .foregroundStyle(Color(UIColor.white))
+            }
+            
+//        }
+//        .accentColor(.white)
     }
 }
 
 #Preview {
-    SessionButtonView()
+    SessionButtonView(caption: "Speaker", symbol: "speaker.wave.3.fill",buttonColor:.systemGray2)
 }

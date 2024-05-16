@@ -7,10 +7,12 @@
 
 import Foundation
 import Contacts
+import UIKit
 
 struct ContactModel: Identifiable, Hashable{
     var id: UUID = UUID()
     var firstname: String?
     var lastname: String?
-    var phonenumbers: [CNLabeledValue<CNPhoneNumber>]?
+//    var phonenumbers: [CNLabeledValue<CNPhoneNumber>]?
+//    var image: Data
 }

@@ -8,54 +8,52 @@
 import SwiftUI
 
 struct MainView: View {
+    //@EnvironmentObject var callOptionViewModel : CallOptionViewModel
+    @EnvironmentObject var contactsViewModel: ContactsViewModel
+
     var body: some View {
         
         TabView {
-            
             StarView()
-                .tabItem {
-                        Image(systemName: "star.fill")
-                        Text("Favorites")
-                }
+                .tabItem {Label("Favorites", systemImage: "star.fill")}
             
-            ClockView()
-                .tabItem {
-                    VStack {
-                        Image(systemName: "clock.fill")
-                        Text("Recents")
-                    }
-                }
             
-            PersonView()
-                .tabItem {
-                    VStack {
-                        Image(systemName: "person.circle.fill")
-                        Text("Contacts")
-                    }
-                }
+            MakeCallView()
+            .tabItem {Label("Call", systemImage: "phone.arrow.up.right.fill")}
+            
+            ContactsView()
+                .tabItem {Label("Contacts", systemImage: "person.circle.fill")}
             
             KeypadView()
-                .tabItem {
-                    VStack {
-                        Image(systemName: "circle.grid.3x3.fill")
-                        Text("Keypad")
-                    }
-                }
+                .tabItem {Label("Keypad", systemImage: "circle.grid.3x3.fill")}
             
             VoicemailView()
-                .tabItem {
-                    VStack {
-                        Image(systemName: "recordingtape")
-                        Text("Voicemail")
-                    }
-                }
+                .tabItem {Label("Voicemail", systemImage: "recordingtape")}
+        }.onAppear() {
+            //callOptionViewModel.getItems()
+            contactsViewModel.getLocalContacts()
+
+            let standardAppearance = UITabBarAppearance()
+                   
+                   standardAppearance.configureWithOpaqueBackground()
+                   standardAppearance.shadowColor = .black.withAlphaComponent(0.3)
+                   
+                   UITabBar.appearance().standardAppearance = standardAppearance
+                   UITabBar.appearance().scrollEdgeAppearance = standardAppearance
         }
         
     }
+        
 }
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        TabView {
+            MainView()
+        }
+        .environmentObject(CallOptionViewModel())  
+        .environmentObject(ContactsViewModel())//have to add this to MainView so that MakeCallView doesn't crash
+        //.environmentObject(ContactsViewModel())
+
     }
 }

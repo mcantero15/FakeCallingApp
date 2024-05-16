@@ -13,18 +13,24 @@ struct OptionListRowView: View {
     
     var body: some View {
         HStack {
-            VStack {
+            Image(systemName: "phone.arrow.up.right.fill")
+                .foregroundColor(Color(UIColor.systemGray4))
+                .padding(.bottom)
+                .padding(.trailing, 5.0)
+                .font(.caption)
+                
+            VStack(alignment: .leading) {
                 Text(option.name)
                     .bold()
                 
-                Text(option.duration)
+                Text(option.callerName)
                     .font(.subheadline)
                     .foregroundColor(.gray)
             }
             
             Spacer()
             
-            Text(option.day)
+            Text(option.duration)
                 .foregroundColor(.gray)
             
             Image(systemName: option.icon)
@@ -36,6 +42,6 @@ struct OptionListRowView: View {
 
 struct OptionListRow_Previews: PreviewProvider {
     static var previews: some View {
-        OptionListRowView(option: CallOptionModel(name: "Recording 1", duration: "0:00", day: "Today"))
+        OptionListRowView(option: CallOptionModel(name: "Recording 1", duration: "0:00", callerName: "Amy"))
     }
 }

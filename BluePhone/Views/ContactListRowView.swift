@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct ContactListRowView: View {
+    var contact: ContactModel
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack{
+            Text(contact.firstname ?? "Missing")
+                .bold()
+            Spacer()
+        }
     }
 }
 
 #Preview {
-    ContactListRowView()
+    ContactListRowView(contact: ContactModel(firstname: "Mary", lastname: "Can"))
 }

@@ -9,9 +9,17 @@ import SwiftUI
 
 @main
 struct BluePhoneApp: App {
+    
+    @StateObject var callOptionViewModel: CallOptionViewModel = CallOptionViewModel()
+    @StateObject var contactsViewModel: ContactsViewModel = ContactsViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            MainView()
+            
+                MainView()
+            .environmentObject(callOptionViewModel)
+            .environmentObject(contactsViewModel)
         }
+        
     }
 }
