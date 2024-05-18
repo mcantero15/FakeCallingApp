@@ -32,7 +32,7 @@ class ContactsViewModel: ObservableObject
                             // do something
                             DispatchQueue.main.async {
                                 //self.localContacts.append(contact)
-                                self.localContacts.append(ContactModel(firstname: contact.givenName, lastname: contact.familyName)) /*phonenumbers: contact.phoneNumbers, image: contact.imageData ?? */
+                                self.localContacts.append(ContactModel(firstname: contact.givenName, lastname: contact.familyName, phonenumbers: contact.phoneNumbers))
                             }
                         })
                     }
