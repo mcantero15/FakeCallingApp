@@ -7,7 +7,6 @@
 
 import Foundation
 import Contacts
-import UIKit
 
 struct ContactModel: Identifiable, Hashable{
     var id: UUID = UUID()
