@@ -15,7 +15,7 @@
 		A4A81C1B2B156ACE00948951 /* MakeCallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A81C1A2B156ACE00948951 /* MakeCallView.swift */; };
 		A4A81C1D2B156ADF00948951 /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A81C1C2B156ADF00948951 /* ContactsView.swift */; };
 		A4A81C1F2B156AF200948951 /* KeypadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A81C1E2B156AF200948951 /* KeypadView.swift */; };
-		A4A81C212B156B0700948951 /* VoicemailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A81C202B156B0700948951 /* VoicemailView.swift */; };
+		A4A81C212B156B0700948951 /* ReceiveCallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A81C202B156B0700948951 /* ReceiveCallView.swift */; };
 		A4A81C252B15BB0C00948951 /* CallOptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A81C242B15BB0C00948951 /* CallOptionModel.swift */; };
 		A4A81C292B168AF800948951 /* OptionListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A81C282B168AF800948951 /* OptionListRowView.swift */; };
 		A4A81C2B2B16927900948951 /* NumberButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A81C2A2B16927900948951 /* NumberButton.swift */; };
@@ -38,7 +38,7 @@
 		A4A81C1A2B156ACE00948951 /* MakeCallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeCallView.swift; sourceTree = "<group>"; };
 		A4A81C1C2B156ADF00948951 /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
 		A4A81C1E2B156AF200948951 /* KeypadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeypadView.swift; sourceTree = "<group>"; };
-		A4A81C202B156B0700948951 /* VoicemailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicemailView.swift; sourceTree = "<group>"; };
+		A4A81C202B156B0700948951 /* ReceiveCallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveCallView.swift; sourceTree = "<group>"; };
 		A4A81C242B15BB0C00948951 /* CallOptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallOptionModel.swift; sourceTree = "<group>"; };
 		A4A81C282B168AF800948951 /* OptionListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionListRowView.swift; sourceTree = "<group>"; };
 		A4A81C2A2B16927900948951 /* NumberButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberButton.swift; sourceTree = "<group>"; };
@@ -90,7 +90,7 @@
 				A4A81C1A2B156ACE00948951 /* MakeCallView.swift */,
 				A4A81C1C2B156ADF00948951 /* ContactsView.swift */,
 				A4A81C1E2B156AF200948951 /* KeypadView.swift */,
-				A4A81C202B156B0700948951 /* VoicemailView.swift */,
+				A4A81C202B156B0700948951 /* ReceiveCallView.swift */,
 				A4A81C282B168AF800948951 /* OptionListRowView.swift */,
 				A4A81C2A2B16927900948951 /* NumberButton.swift */,
 				A4A81C2C2B16CA2E00948951 /* PhoneGridRow.swift */,
@@ -220,7 +220,7 @@
 				A4A81C1F2B156AF200948951 /* KeypadView.swift in Sources */,
 				A47E708A2BDAC0EE005802B0 /* ContactDetailView.swift in Sources */,
 				A4A81C1B2B156ACE00948951 /* MakeCallView.swift in Sources */,
-				A4A81C212B156B0700948951 /* VoicemailView.swift in Sources */,
+				A4A81C212B156B0700948951 /* ReceiveCallView.swift in Sources */,
 				A47E70882BBE1E2C005802B0 /* ContactModel.swift in Sources */,
 				A4A81C2B2B16927900948951 /* NumberButton.swift in Sources */,
 				A4A81C292B168AF800948951 /* OptionListRowView.swift in Sources */,
