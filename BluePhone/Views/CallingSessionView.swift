@@ -14,8 +14,9 @@ struct CallingSessionView: View {
 //    @Environment(\.presentationMode) var presentationMode
     @Environment(\.dismiss) var dismiss
     @State private var audioPlayer: AVAudioPlayer!
-    @State private var isContactPickerPresented = false
-    @State private var selectedContact: CNContact?
+    @State private var isContactViewPresented = false
+//    @State private var isContactPickerPresented = false
+//    @State private var selectedContact: CNContact?
     
     let call : CallOptionModel
     
@@ -62,7 +63,8 @@ struct CallingSessionView: View {
                         
                         GridRow{
                             Button {
-                                isContactPickerPresented = true
+                                isContactViewPresented = true
+                                //isContactPickerPresented = true
                             } label: {
                                 SessionButtonView(caption: "Contacts", symbol: "person.circle.fill", buttonColor: .systemGray2)
                             }
@@ -96,9 +98,12 @@ struct CallingSessionView: View {
             }
             .navigationBarBackButtonHidden(true)
             .toolbar(.hidden, for: .tabBar)
-            .sheet(isPresented: $isContactPickerPresented) {
-                ContactsPicker(selectedContact: $selectedContact)
-            }
+            .sheet(isPresented: $isContactViewPresented, content: {
+                ContactsView()
+            })
+//            .sheet(isPresented: $isContactPickerPresented) {
+//                ContactsPicker(selectedContact: $selectedContact)
+//            }
     }
     
     func endCallButtonPressed() {
@@ -120,36 +125,36 @@ struct CallingSessionView: View {
     
 }
 
-struct ContactsPicker: UIViewControllerRepresentable {
-    
-//    typealias UIViewControllerType = CNContactPickerViewController
-    
-    @Binding var selectedContact: CNContact?
-    
-    func makeUIViewController(context: Context) -> CNContactPickerViewController {
-        let contactPicker = CNContactPickerViewController()
-        contactPicker.delegate = context.coordinator
-        return contactPicker
-    }
-    
-    func updateUIViewController(_ uiViewController: CNContactPickerViewController, context: Context) {
-    }
-    func makeCoordinator() -> Coordinator {
-        Coordinator(selectedContact: $selectedContact)
-    }
-    class Coordinator: NSObject, CNContactPickerDelegate {
-        @Binding var selectedContact: CNContact?
-        
-        init(selectedContact: Binding<CNContact?>) {
-            _selectedContact = selectedContact
-        }
-        
-        func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
-            selectedContact = contact
-        }
-    }
-    
-}
+//struct ContactsPicker: UIViewControllerRepresentable {
+//    
+////    typealias UIViewControllerType = CNContactPickerViewController
+//    
+//    @Binding var selectedContact: CNContact?
+//    
+//    func makeUIViewController(context: Context) -> CNContactPickerViewController {
+//        let contactPicker = CNContactPickerViewController()
+//        contactPicker.delegate = context.coordinator
+//        return contactPicker
+//    }
+//    
+//    func updateUIViewController(_ uiViewController: CNContactPickerViewController, context: Context) {
+//    }
+//    func makeCoordinator() -> Coordinator {
+//        Coordinator(selectedContact: $selectedContact)
+//    }
+//    class Coordinator: NSObject, CNContactPickerDelegate {
+//        @Binding var selectedContact: CNContact?
+//        
+//        init(selectedContact: Binding<CNContact?>) {
+//            _selectedContact = selectedContact
+//        }
+//        
+//        func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
+//            selectedContact = contact
+//        }
+//    }
+//    
+//}
 
 #Preview {
             CallingSessionView(call: CallOptionModel(name: "Rec 1", duration: "0:00", callerName: "today"))
