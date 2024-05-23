@@ -10,7 +10,7 @@ import SwiftUI
 struct MainView: View {
     //@EnvironmentObject var callOptionViewModel : CallOptionViewModel
     @EnvironmentObject var contactsViewModel: ContactsViewModel
-
+    //@State private var string = ""
     var body: some View {
         
         TabView {
@@ -27,8 +27,8 @@ struct MainView: View {
             KeypadView()
                 .tabItem {Label("Keypad", systemImage: "circle.grid.3x3.fill")}
             
-            VoicemailView()
-                .tabItem {Label("Voicemail", systemImage: "recordingtape")}
+            ReceiveCallView()
+                .tabItem {Label("Receive", systemImage: "phone.arrow.down.left.fill")}
         }.onAppear() {
             //callOptionViewModel.getItems()
             contactsViewModel.getLocalContacts()
