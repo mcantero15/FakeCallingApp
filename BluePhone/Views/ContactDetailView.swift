@@ -14,11 +14,11 @@ struct ContactDetailView: View {
         VStack{
             Spacer()
             Image(systemName: "person.circle.fill").foregroundStyle(Color(UIColor.systemGray)).font(.system(size: 120))
-            Text("\(contact.firstname ?? "") \(contact.lastname ?? "")").font(.largeTitle).foregroundColor(Color.white).multilineTextAlignment(.center).padding(.horizontal)
+            Text("\(contact.firstname) \(contact.lastname)").font(.largeTitle).foregroundColor(Color.white).multilineTextAlignment(.center).padding(.horizontal)
             HStack {
                 Spacer()
                 Menu {
-                    ForEach(contact.phonenumbers ?? [], id: \.self) { contactNum in
+                    ForEach(contact.phonenumbers, id: \.self) { contactNum in
                         Button(action: {
                             message(number: contactNum.value.stringValue)
                         }, label: {
@@ -53,7 +53,7 @@ struct ContactDetailView: View {
 //                    }
 //                            })
                 Menu {
-                    ForEach(contact.phonenumbers ?? [], id: \.self) { contactNum in
+                    ForEach(contact.phonenumbers, id: \.self) { contactNum in
                         Button(action: {
                             call(number: contactNum.value.stringValue)
                         }, label: {
@@ -91,7 +91,7 @@ struct ContactDetailView: View {
 //                    }
 //                            })
                 Menu {
-                    ForEach(contact.phonenumbers ?? [], id: \.self) { contactNum in
+                    ForEach(contact.phonenumbers, id: \.self) { contactNum in
                         Button(action: {
                             faceTime(number: contactNum.value.stringValue)
                         }, label: {
@@ -165,5 +165,5 @@ struct ContactDetailView: View {
 }
 
 #Preview {
-    ContactDetailView(contact: ContactModel(firstname: "Brother From the Same Mother 👨‍👩‍👧", lastname: nil))
+    ContactDetailView(contact: ContactModel(firstname: "Brother From the Same Mother 👨‍👩‍👧", lastname: nil, phonenumbers: []))
 }

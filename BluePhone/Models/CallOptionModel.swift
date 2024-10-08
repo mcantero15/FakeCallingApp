@@ -10,7 +10,9 @@ import SwiftUI
 
 struct CallOptionModel: Identifiable, Codable, Hashable {     //will follow identifiable protocol
     var id: UUID = UUID() //have to add an ID in order to conform to the rules of identifiable, and sets it to a new instance of UUID so that it can create and assign it an ID
+    var type: String
     var name: String    //a property of CallOption
+    var fileName: String
     var duration: String
     var callerName: String
     var icon: String = "info.circle"

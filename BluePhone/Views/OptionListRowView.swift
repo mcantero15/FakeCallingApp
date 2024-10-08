@@ -10,10 +10,12 @@ import SwiftUI
 struct OptionListRowView: View {
     
     var option: CallOptionModel
+    var phoneSymbol: String
+    
     
     var body: some View {
         HStack {
-            Image(systemName: "phone.arrow.up.right.fill")
+            Image(systemName: phoneSymbol)
                 .foregroundColor(Color(UIColor.systemGray4))
                 .padding(.bottom)
                 .padding(.trailing, 5.0)
@@ -42,6 +44,6 @@ struct OptionListRowView: View {
 
 struct OptionListRow_Previews: PreviewProvider {
     static var previews: some View {
-        OptionListRowView(option: CallOptionModel(name: "Recording 1", duration: "0:00", callerName: "Amy"))
+        OptionListRowView(option: CallOptionModel(type: "Outgoing", name: "Ask for a ride", fileName: "Recording 1", duration: "0:00", callerName: "Amy"), phoneSymbol: "phone.arrow.up.right.fill")
     }
 }

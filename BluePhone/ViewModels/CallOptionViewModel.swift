@@ -10,8 +10,10 @@ import Foundation
 class CallOptionViewModel: ObservableObject {
     
     @Published var callOptions: [CallOptionModel] = [
-        CallOptionModel(name: "Recording 1", duration: "0:00", callerName: "Amy"),
-        CallOptionModel(name: "Recording 2", duration: "0:00", callerName: "Andrew")
+        CallOptionModel(type: "Outgoing", name: "Ask for a ride", fileName: "OutgoingScript1", duration: "00:48", callerName: "Amy"),
+        CallOptionModel(type: "Outgoing", name: "Awaiting your arrival", fileName: "OutgoingScript2", duration: "00:30", callerName: "Amy"),
+        CallOptionModel(type: "Incoming", name: "Ask for a ride", fileName: "IncomingScript1", duration: "00:39", callerName: "Amy"),
+        CallOptionModel(type: "Incoming", name: "Awaiting your arrival", fileName: "IncomingScript2", duration: "00:21", callerName: "Amy")
     ] {
         didSet {
             saveItems()

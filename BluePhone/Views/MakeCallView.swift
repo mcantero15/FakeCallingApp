@@ -9,7 +9,7 @@ import SwiftUI
 import AVFAudio
 
 struct MakeCallView: View {
-    
+    @ObservedObject var router = MakeCallRouter()
     //    @State var callOptions: [CallOptionModel] = [CallOptionModel]() //will contain an empty array of CallOption instances
     //    var dataService = DataService()
     //
@@ -18,29 +18,36 @@ struct MakeCallView: View {
 //    @State private var selectedItem: CallOptionModel?
 //    @State private var isNavigationActiv	e = false
     
-    @State private var path = NavigationPath()
+    //@State private var path = NavigationPath()
     //@State private var animate: Bool = false
     @State private var audioPlayer: AVAudioPlayer!
     
+    //@StateObject var audioPlayerViewModel = AudioPlayerViewModel(soundName: "outgoingCall", soundType: "mp3")
+    
     var body: some View {
-        NavigationStack(path: $path) {
+        NavigationStack(path: $router.navPath) {
         List {
             ForEach(callOptionViewModel.callOptions) { option in
-    
-                Button(action: {
-                    path.append(option)
-//                    selectedItem = option
-//                    isNavigationActive = true
-                    print("this button works")
-                    playSound(soundName: "outgoingCall")
-                }, label: {
-                    OptionListRowView(option: option)
-                        .contentShape(Rectangle())
+                if option.type == "Outgoing"
+                {
+                    Button(action: {
+                        router.navigate(to: .callingSession(call: option))
+                        //                    selectedItem = option
+                        //                    isNavigationActive = true
+                        print("this button works")
                         
-                })
-                .listRowInsets(.init(top: 10, leading: 10, bottom: 10, trailing: 10))
-//                .listRowInsets(.init(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0)))
-                .buttonStyle(PlainButtonStyle())
+                        //playSound(soundName: "outgoingCall")
+                    }, label: {
+                        OptionListRowView(option: option, phoneSymbol: "phone.arrow.up.right.fill")
+                            .contentShape(Rectangle())
+                        
+                    })
+                    .listRowInsets(.init(top: 10, leading: 10, bottom: 10, trailing: 10))
+                    //                .listRowInsets(.init(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0)))
+                    .buttonStyle(PlainButtonStyle())
+                    
+                    
+                }
                 
             }
             .onMove(perform: callOptionViewModel.moveItem)
@@ -54,24 +61,32 @@ struct MakeCallView: View {
         .navigationTitle("Make Call")
         //.padding()
         .navigationBarItems(leading: EditButton())
-        .navigationDestination(for: CallOptionModel.self) { option in
-            CallingSessionView(call: option)
-//                .onAppear(perform: {
-//                    let soundName = "outgoingCall"
-//                    guard let soundFile = NSDataAsset(name: soundName) else {
-//                        print("Could not read file name")
-//                        return
-//                    }
-//                    do {
-//                        audioPlayer = try AVAudioPlayer(data: soundFile.data)
-//                        audioPlayer.play()
-//                    } catch {
-//                        print("Error")
-//                    }
-//                    
-//                })
-                
+        .navigationDestination(for: MakeCallRouter.Destination.self) { destination in
+            switch destination {
+            case .callingSession(let call):
+                CallingSessionView(action: endCall, iscalling: true, call: call)
+                    //.onAppear(perform: audioPlayerViewModel.playOrPause)
+                    //.onDisappear(perform: audioPlayerViewModel.playOrPause)
+            }
         }
+//        .navigationDestination(for: CallOptionModel.self) { option in
+//            CallingSessionView(call: option)
+////                .onAppear(perform: {
+////                    let soundName = "outgoingCall"
+////                    guard let soundFile = NSDataAsset(name: soundName) else {
+////                        print("Could not read file name")
+////                        return
+////                    }
+////                    do {
+////                        audioPlayer = try AVAudioPlayer(data: soundFile.data)
+////                        audioPlayer.play()
+////                    } catch {
+////                        print("Error")
+////                    }
+////                    
+////                })
+//                
+//        }
             
             
 //        .navigationDestination(isPresented: $isNavigationActive, destination: {
@@ -112,6 +127,13 @@ struct MakeCallView: View {
             //            callOptions = dataService.getData()
             //        }
             //        }
+    
+    
+    func endCall() {
+        router.navigateToRoot()
+    }
+    
+    
             
     func playSound(soundName : String) {
         guard let soundFile = NSDataAsset(name: soundName) else {
@@ -128,6 +150,8 @@ struct MakeCallView: View {
     
     
 }
+
+
 
 
 

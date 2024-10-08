@@ -11,11 +11,16 @@ struct PhoneGridRow: View {
     var labels = ["", "", ""]
     var body: some View {
         
-        HStack(spacing: 25) {
-            ForEach(0..<3) { index in
-                NumberButton(key: labels[index])
+            HStack(spacing: 25){
+                ForEach(0..<3) { index in
+                    NumberButton(key: labels[index])
+                        
+                }
             }
-        }
+        
+        
+        
+        
         
     }
 }

@@ -4,19 +4,27 @@
 //
 //  Created by Mariana Cantero on 3/7/24.
 //
+//This view needs to be connected to two routers so that when the end button is pressed, the routers return to their root which would be the initial tab view 
+//
+//
 import Contacts
 import ContactsUI
 import SwiftUI
 import AVFAudio
 
 struct CallingSessionView: View {
+    @EnvironmentObject var router: ReceiveCallRouter
+    
     
 //    @Environment(\.presentationMode) var presentationMode
-    @Environment(\.dismiss) var dismiss
+    //@Environment(\.dismiss) var dismiss
     @State private var audioPlayer: AVAudioPlayer!
     @State private var isContactViewPresented = false
 //    @State private var isContactPickerPresented = false
 //    @State private var selectedContact: CNContact?
+    var action: () -> Void
+    
+    var iscalling: Bool
     
     let call : CallOptionModel
     
@@ -37,7 +45,7 @@ struct CallingSessionView: View {
                                 .font(.headline)
                                 .bold()
                             
-                            Text("Amy")
+                            Text(call.callerName)
                                 .foregroundColor(.white)
                                 .font(.system(size: 40))
                                 .bold()
@@ -68,12 +76,14 @@ struct CallingSessionView: View {
                             } label: {
                                 SessionButtonView(caption: "Contacts", symbol: "person.circle.fill", buttonColor: .systemGray2)
                             }
+                            EndButtonView().environment(\.endAction, action)
+//                            Button(action: {
+//                                endCallButtonPressed()
+//                            }, label: {
+//                                SessionButtonView(caption: "End", symbol: "phone.down.fill", buttonColor: .blue)
+//                            })
                             
-                            Button(action: {
-                                endCallButtonPressed()
-                            }, label: {
-                                SessionButtonView(caption: "End", symbol: "phone.down.fill", buttonColor: .blue)
-                            })
+                            
                             Button(action: {
                                 let number = ""
                                 let message = "This is a test message "
@@ -101,13 +111,22 @@ struct CallingSessionView: View {
             .sheet(isPresented: $isContactViewPresented, content: {
                 ContactsView()
             })
-//            .sheet(isPresented: $isContactPickerPresented) {
-//                ContactsPicker(selectedContact: $selectedContact)
-//            }
+            .onAppear{
+                
+                
+               //play the voice recording
+                playSound(soundName: call.fileName)
+                
+                
+                
+                
+            }
+
     }
     
     func endCallButtonPressed() {
-        dismiss()
+        router.navigateToRoot()
+        //dismiss()
     }
     
     func playSound(soundName : String) {
@@ -125,38 +144,11 @@ struct CallingSessionView: View {
     
 }
 
-//struct ContactsPicker: UIViewControllerRepresentable {
-//    
-////    typealias UIViewControllerType = CNContactPickerViewController
-//    
-//    @Binding var selectedContact: CNContact?
-//    
-//    func makeUIViewController(context: Context) -> CNContactPickerViewController {
-//        let contactPicker = CNContactPickerViewController()
-//        contactPicker.delegate = context.coordinator
-//        return contactPicker
-//    }
-//    
-//    func updateUIViewController(_ uiViewController: CNContactPickerViewController, context: Context) {
-//    }
-//    func makeCoordinator() -> Coordinator {
-//        Coordinator(selectedContact: $selectedContact)
-//    }
-//    class Coordinator: NSObject, CNContactPickerDelegate {
-//        @Binding var selectedContact: CNContact?
-//        
-//        init(selectedContact: Binding<CNContact?>) {
-//            _selectedContact = selectedContact
-//        }
-//        
-//        func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
-//            selectedContact = contact
-//        }
-//    }
-//    
-//}
+
 
 #Preview {
-            CallingSessionView(call: CallOptionModel(name: "Rec 1", duration: "0:00", callerName: "today"))
+    
+    
+    CallingSessionView(action: {}, iscalling: true, call: CallOptionModel(type: "Outgoing", name: "Ask for a ride", fileName: "Rec 1", duration: "0:00", callerName: "Amy"))
 
 }

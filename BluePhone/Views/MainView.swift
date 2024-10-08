@@ -14,8 +14,8 @@ struct MainView: View {
     var body: some View {
         
         TabView {
-            StarView()
-                .tabItem {Label("Favorites", systemImage: "star.fill")}
+            AlarmView()
+                .tabItem {Label("Alarm", systemImage: "speaker.badge.exclamationmark.fill")}
             
             
             MakeCallView()

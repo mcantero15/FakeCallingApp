@@ -11,13 +11,13 @@ struct ContactListRowView: View {
     var contact: ContactModel
     var body: some View {
         HStack{
-            Text(contact.firstname ?? "Missing")
-                .bold()
+            Text("\(contact.firstname) \(contact.lastname)")
+                //.bold()
             Spacer()
         }
     }
 }
 
 #Preview {
-    ContactListRowView(contact: ContactModel(firstname: "Mary", lastname: "Can"))
+    ContactListRowView(contact: ContactModel(firstname: "Mary", lastname: "Can", phonenumbers: []))
 }

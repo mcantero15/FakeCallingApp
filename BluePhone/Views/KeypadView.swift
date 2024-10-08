@@ -16,14 +16,14 @@ struct KeypadView: View {
         VStack(){
                 Spacer()
 //                TextField("", text: $input).textFieldStyle(.plain)
-                Text(input).font(.largeTitle)
-                    
+            Text(input).font(.largeTitle).frame(height: 50)
+                
                 Grid{
                         PhoneGridRow(labels: ["1", "2", "3"])
                         PhoneGridRow(labels: ["4", "5", "6"])
                         PhoneGridRow(labels: ["7", "8", "9"])
                         PhoneGridRow(labels: ["*", "0", "#"])
-                }.environment(\.action, numberPadAction(_:)).padding()
+                }.environment(\.action, numberPadAction(_:)).padding(.top, 40.0)
             HStack() {
                 Spacer()
                 Spacer()
@@ -41,7 +41,7 @@ struct KeypadView: View {
                             .foregroundColor(Color.white)
                             .font(.title)
                     }
-                }).padding(.leading, 5.0)
+                }).padding(.leading, 30.0)
                 
                 Button(action: {
                     //delete button

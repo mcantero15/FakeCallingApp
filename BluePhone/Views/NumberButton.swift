@@ -16,7 +16,7 @@ struct NumberButton: View {
         Button(action: {self.action(self.key)}, label: {
             ZStack {
                 Circle()
-                    .fill(Color(hue: 1.0, saturation: 0.997, brightness: 0.001, opacity: 0.133)).frame(width: 90, height: 90)
+                    .fill(Color(hue: 1.0, saturation: 0.997, brightness: 0.001, opacity: 0.133))//.frame(width: 90, height: 90)
                 
                 Text(key)
                     .font(.largeTitle)
